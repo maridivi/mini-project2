@@ -60,3 +60,20 @@ body {
 .Footer a {
   color: white;
 }
+
+.RecipeContent {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.RecipeBox img {
+  width: 50px;
+  border: 2px solid white; 
+  padding: 5px; 
+
+}
+
+.RecipeBox {
+  border: 2px solid white; 
+}
