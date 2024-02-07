@@ -1,8 +1,10 @@
+import { NavLink } from "react-router-dom";
+
 function SideBar() {
   return (
     <div className="Sidebar">
-      <a>Home</a>
-      <a>About</a>
+      <NavLink to="/">Home</NavLink>
+      <NavLink to="/about">About</NavLink>
     </div>
   );
 }

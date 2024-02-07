@@ -16,45 +16,52 @@
 body {
   margin: 0;
   padding: 0;
-  display: flex;
+  /* display: flex;
   place-items: center;
   min-width: 320px;
-  min-height: 100vh;
+  min-height: 100vh; */
+  width: 100%;
+  height: 100%;
 }
 
+.Wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.Main {
+  flex: 1;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  align-items: stretch;
+}
 .Navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  padding: 0 20px;
   border-bottom: 1px solid white;
-  width: 100vw;
-  text-align: left;
+  height: 100px;
+  flex: 0 0 auto;
+  padding: 0 20px;
 }
 
 .Sidebar {
   display: flex;
   flex-direction: column;
-  left: 0;
+
   padding: 20px;
-  border-right: 1px solid white;
-  position: fixed;
+
   text-align: start;
-  top: 90px;
-  height: 81vh;
-  width: 15vw;
+
   align-items: center;
+  border-right: 1px solid white;
 }
 
 .Footer {
-  position: fixed;
-  bottom: 0;
-  right: 0;
   padding: 10px;
-  width: 100vw;
+
   display: flex;
   justify-content: center;
   border-top: 1px solid white;
+
+  flex: 0 0 auto;
 }
 
 .Footer a {
@@ -69,11 +76,18 @@ body {
 
 .RecipeBox img {
   width: 50px;
-  border: 2px solid white; 
-  padding: 5px; 
-
+  border: 2px solid white;
+  padding: 5px;
 }
 
 .RecipeBox {
-  border: 2px solid white; 
+  border: 2px solid white;
+}
+
+.RecipeDetail img {
+  width: 500px;
+}
+
+.RecipeDetail {
+  color: white;
 }
