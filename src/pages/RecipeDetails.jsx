@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import recipes from "../assets/recipes.json";
 
 export default function RecipeDetails() {
@@ -14,6 +14,7 @@ export default function RecipeDetails() {
         <p>Calories: {recipe.calories}</p>
         <p>Servings: {recipe.servings}</p>
       </div>
+      <Link to="/">Back to Homepage</Link>
     </div>
   );
 }
