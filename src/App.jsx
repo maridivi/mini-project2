@@ -8,8 +8,20 @@ import AboutPage from "./pages/AboutPage";
 import RecipeDetails from "./pages/RecipeDetails";
 import DashboardPage from "./pages/DashboardPage";
 import NotFound from "./pages/NotFound";
+import { useState } from "react";
+import recipes from "./assets/recipes.json";
 
 function App() {
+  const [displayedRecipes, setDisplayedRecipes] = useState(recipes);
+  const updateRecipe = (recipeId, newObj) => {
+    setDisplayedRecipes(
+      displayedRecipes.map((recipe) => {
+        if (recipe.id === recipeId) {
+          return { ...recipe, newObj };
+        }
+      })
+    );
+  };
   return (
     <div className="Wrapper">
       <NavBar />
@@ -19,7 +31,10 @@ function App() {
         <Routes>
           <Route path="/" element={<DashboardPage />} />
           <Route path="/about" element={<AboutPage />} />
-          <Route path="/recipes/:recipeId" element={<RecipeDetails />} />
+          <Route
+            path="/recipes/:recipeId"
+            element={<RecipeDetails callbackToUpdate={updateRecipe} />}
+          />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
