@@ -29,10 +29,13 @@ function App() {
     console.log("updating recipe", updatedRecipe.id);
     setDisplayedRecipes((currentRecipes) =>
       currentRecipes.map((recipe) => {
+        // Checks if the current recipe's ID matches the ID of the updatedRecipe.
         if (recipe.id === updatedRecipe.id) {
           console.log("updating...");
+          // Returns the updatedRecipe object to replace the current recipe in the new array.
           return updatedRecipe;
         }
+        // For any recipe that does not match the ID, returns the recipe unmodified.
         return recipe;
       })
     );

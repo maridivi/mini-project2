@@ -9,8 +9,6 @@ function RecipeCard({ image, name, id }) {
         <img src={image}></img>
       </Link>
       <h2>{name} </h2>
-
-      {/* <button onClick={() => {callbackToDelete(id)}}>Delete</button> */}
     </div>
   );
 }
