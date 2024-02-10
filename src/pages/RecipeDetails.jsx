@@ -16,8 +16,8 @@ export default function RecipeDetails({ recipes, onRecipeUpdate }) {
         <p>Servings: {recipe.servings}</p>
         <button>Edit</button>
       </div>
-      <Link to="/">Back to Homepage</Link>
       <UpdatingForm recipe={recipe} onRecipeUpdate={onRecipeUpdate} />
+      <Link to="/">Back to Homepage</Link>
     </div>
   );
 }

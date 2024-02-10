@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+  background-color: #6e6c6c;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -42,25 +42,25 @@ body {
   padding: 0 20px;
 }
 
+.Navbar h1 {
+  text-align: center;
+  margin-top: 30px;
+}
+
 .Sidebar {
   display: flex;
   flex-direction: column;
-
   padding: 20px;
-
   text-align: start;
-
   align-items: center;
   border-right: 1px solid white;
 }
 
 .Footer {
   padding: 10px;
-
   display: flex;
   justify-content: center;
   border-top: 1px solid white;
-
   flex: 0 0 auto;
 }
 
@@ -69,19 +69,34 @@ body {
 }
 
 .RecipeList {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  font-size: small;
 }
 
 .RecipeBox img {
-  width: 50px;
+  width: 150px;
   border: 2px solid white;
   padding: 5px;
 }
 
 .RecipeContent {
   border: 2px solid white;
+  margin: 10px;
+}
+
+.RecipeContent button {
+  position: relative;
+  display: inline;
+  bottom: 0;
+}
+
+form {
+  margin: 5px;
+  border: 2px solid white;
+  padding: 10px;
 }
 
 .RecipeDetail img {
@@ -90,4 +105,30 @@ body {
 
 .RecipeDetail {
   color: white;
+  margin-left: 20px;
+}
+
+.AboutPage {
+  margin-left: 20px;
+}
+
+.TeamMember {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 20px;
+  border: 2px solid white;
+  width: 30%;
+}
+
+.TeamMember p {
+  margin-right: 10px;
+}
+
+.Links {
+  margin-top: 5px;
+}
+.Links a {
+  display: block;
+  margin-bottom: 5px;
 }
