@@ -68,7 +68,7 @@ body {
   color: white;
 }
 
-.RecipeContent {
+.RecipeList {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -80,7 +80,7 @@ body {
   padding: 5px;
 }
 
-.RecipeBox {
+.RecipeContent {
   border: 2px solid white;
 }
 

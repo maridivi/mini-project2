@@ -1,44 +1,43 @@
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 
-function UpdatingForm({ title, image, servings, calories, onRecipeUpdate }) {
-  const [initialValues, setInitialValues] = useState({
-    title: title,
-    calories: calories,
-    image: image,
-    servings: servings,
+function UpdatingForm({ recipe, onRecipeUpdate }) {
+  const [formValues, setFormValues] = useState({
+    name: recipe.name,
+    calories: recipe.calories,
+    image: recipe.image,
+    servings: recipe.servings,
   });
 
   const handleValueChanges = (e) => {
-    setInitialValues({
-      ...initialValues,
+    setFormValues({
+      ...formValues,
       [e.target.name]: e.target.value,
     });
   };
   const handleSubmit = (event) => {
     event.preventDefault();
     onRecipeUpdate({
-      ...initialValues,
-
-      name: initialValues.title,
-      calories: initialValues.calories,
-      image: initialValues.image,
-      servings: initialValues.servings,
+      ...recipe,
+      name: formValues.name,
+      calories: formValues.calories,
+      image: formValues.image,
+      servings: formValues.servings,
     });
 
-    return initialValues;
-    //  setNewRecipe({ title: "", calories: "", image: "", servings: "" });
+    return formValues;
   };
 
   return (
     <form onSubmit={handleSubmit}>
       <label>
-        Title:
+        Name:
         <input
           type="text"
-          name="title"
+          name="name"
           required
-          placeholder={initialValues.title}
-          value={initialValues.title}
+          placeholder={formValues.name}
+          value={formValues.name}
           onChange={handleValueChanges}
         />
       </label>
@@ -49,8 +48,8 @@ function UpdatingForm({ title, image, servings, calories, onRecipeUpdate }) {
           type="text"
           name="calories"
           required
-          placeholder={initialValues.calories}
-          value={initialValues.calories}
+          placeholder={formValues.calories}
+          value={formValues.calories}
           onChange={handleValueChanges}
         />
       </label>
@@ -61,8 +60,8 @@ function UpdatingForm({ title, image, servings, calories, onRecipeUpdate }) {
           type="url"
           name="image"
           required
-          placeholder={initialValues.image}
-          value={initialValues.image}
+          placeholder={formValues.image}
+          value={formValues.image}
           onChange={handleValueChanges}
         />
       </label>
@@ -73,8 +72,8 @@ function UpdatingForm({ title, image, servings, calories, onRecipeUpdate }) {
           type="text"
           name="servings"
           required
-          placeholder={initialValues.servings}
-          value={initialValues.servings}
+          placeholder={formValues.servings}
+          value={formValues.servings}
           onChange={handleValueChanges}
         />
       </label>

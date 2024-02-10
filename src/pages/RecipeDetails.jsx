@@ -1,8 +1,7 @@
 import { Link, useParams } from "react-router-dom";
-import recipes from "../assets/recipes.json";
 import UpdatingForm from "../components/UpdatingForm";
 
-export default function RecipeDetails({ callbackToUpdate }) {
+export default function RecipeDetails({ recipes, onRecipeUpdate }) {
   const { recipeId } = useParams();
 
   const recipe = recipes.find((recipe) => recipe.id == recipeId);
@@ -18,13 +17,7 @@ export default function RecipeDetails({ callbackToUpdate }) {
         <button>Edit</button>
       </div>
       <Link to="/">Back to Homepage</Link>
-      <UpdatingForm
-        title={recipe.name}
-        servings={recipe.servings}
-        image={recipe.image}
-        calories={recipe.calories}
-        onRecipeUpdate={callbackToUpdate}
-      />
+      <UpdatingForm recipe={recipe} onRecipeUpdate={onRecipeUpdate} />
     </div>
   );
 }
