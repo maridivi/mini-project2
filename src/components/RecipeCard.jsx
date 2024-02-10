@@ -3,13 +3,15 @@ import { Link } from "react-router-dom";
 // eslint-disable-next-line react/prop-types
 function RecipeCard({ image, name, id }) {
   return (
-    <div className="RecipeBox">
-      <Link to={`/recipes/${id}`}>
+      <Link to={`/recipes/${id}`} className="BoxImage">
+      <div className="RecipeBox">
+      <h2>{name}</h2>
         {" "}
         <img src={image}></img>
+        </div>
       </Link>
-      <h2>{name} </h2>
-    </div>
+      
+    
   );
 }
 
