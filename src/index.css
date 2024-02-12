@@ -78,9 +78,12 @@ body {
 }
 
 .RecipeBox img {
-  width: 150px;
-  border: 2px solid white;
-  padding: 5px;
+  width:200px; 
+  /* border: 2px solid white; */
+  height: 180px;
+  object-fit: cover;
+ 
+  
 }
 
 .BoxImage {
@@ -90,18 +93,26 @@ body {
 .RecipeBox h2 {
  color: rgb(0, 0, 0);
   margin-left: 10px;
+  text-align: center
 }
 
 .RecipeContent {
   border: 2px solid white;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
 }
 
 .RecipeContent button {
   position: relative;
   display: inline;
   bottom: 0;
+  margin-top: 10px;
 }
+
 
 form {
   margin: 5px;
@@ -116,10 +127,42 @@ form {
 .RecipeDetail {
   color: rgb(0, 0, 0);
   margin-left: 20px;
+  
 }
+
+.HomeLink {
+  padding: 20px 0;
+  display: inline-block;
+  
+}
+
+.RecipePage {
+  display: flex;
+  color:black;
+}
+
+.UpdatingForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  color: black;
+  
+}
+
+.UpdatingForm button {
+  align-self: center;
+}
+
+.UpdateInput {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
 
 .AboutPage {
   margin-left: 20px;
+  color: black;
 }
 
 .TeamMember {
@@ -141,4 +184,12 @@ form {
 .Links a {
   display: block;
   margin-bottom: 5px;
+}
+
+button {
+  background-color: #FFB996;
+  border:none;
+  border-radius: 5px;
+  padding: 4px 10px;
+  
 }

@@ -29,54 +29,61 @@ function UpdatingForm({ recipe, onRecipeUpdate }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Name:
-        <input
-          type="text"
-          name="name"
-          required
-          placeholder={formValues.name}
-          value={formValues.name}
-          onChange={handleValueChanges}
-        />
-      </label>
+    <form onSubmit={handleSubmit} className="UpdatingForm">
+      <div className="UpdateInput">
+        <label >Name: </label>
+          
+          <input
+            type="text"
+            name="name"
+            required
+            placeholder={formValues.name}
+            value={formValues.name}
+            onChange={handleValueChanges}
+          />
+       
+      </div>
 
-      <label>
-        Calories:
-        <input
-          type="text"
-          name="calories"
-          required
-          placeholder={formValues.calories}
-          value={formValues.calories}
-          onChange={handleValueChanges}
-        />
-      </label>
+      <div className="UpdateInput">
+        <label>
+          Calories:
+        </label>
+        
+          <input
+            type="text"
+            name="calories"
+            required
+            placeholder={formValues.calories}
+            value={formValues.calories}
+            onChange={handleValueChanges}
+          />
+      </div>
 
-      <label>
-        Image:
-        <input
-          type="url"
-          name="image"
-          required
-          placeholder={formValues.image}
-          value={formValues.image}
-          onChange={handleValueChanges}
-        />
-      </label>
+      <div className="UpdateInput">
+        <label> Image: </label>
+          <input
+            type="url"
+            name="image"
+            required
+            placeholder={formValues.image}
+            value={formValues.image}
+            onChange={handleValueChanges}
+          />
+        
+      </div>
 
-      <label>
-        Servings:
-        <input
-          type="text"
-          name="servings"
-          required
-          placeholder={formValues.servings}
-          value={formValues.servings}
-          onChange={handleValueChanges}
-        />
-      </label>
+      <div className="UpdateInput">
+        <label> Servings:  </label>
+          <input
+            type="text"
+            name="servings"
+            required
+            placeholder={formValues.servings}
+            value={formValues.servings}
+            onChange={handleValueChanges}
+          />
+       
+      </div>
 
       <button>Save</button>
     </form>

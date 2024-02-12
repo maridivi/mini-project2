@@ -25,9 +25,9 @@ function AddRecipe({onAddFood}) {
   };
     
   return (
-    <form onSubmit={handleSubmit}>
-      <label>
-        Title:
+    <form onSubmit={handleSubmit} className="UpdatingForm">
+       <div className="UpdateInput">
+       <label>Name: </label>
         <input
           type="text"
           name="title"
@@ -36,10 +36,10 @@ function AddRecipe({onAddFood}) {
           value={newRecipe.title}
           onChange={handleValueChanges}
         />
-      </label>
-
-      <label>
-        Calories:
+         </div>
+      
+      <div className="UpdateInput">
+      <label>Calories: </label>
         <input
           type="text"
           name="calories"
@@ -48,10 +48,10 @@ function AddRecipe({onAddFood}) {
           value={newRecipe.calories}
           onChange={handleValueChanges}
         />
-      </label>
-
-      <label>
-        Image:
+         </div>
+      
+      <div className="UpdateInput">
+      <label>Image: </label>
         <input
           type="url"
           name="image"
@@ -60,10 +60,10 @@ function AddRecipe({onAddFood}) {
           value={newRecipe.image}
           onChange={handleValueChanges}
         />
-      </label>
-
-      <label>
-        Servings:
+         </div>
+      
+      <div className="UpdateInput">
+      <label>Servings:  </label>
         <input
           type="text"
           name="servings"
@@ -72,7 +72,8 @@ function AddRecipe({onAddFood}) {
           value={newRecipe.servings}
           onChange={handleValueChanges}
         />
-      </label>
+         </div>
+     
 
       <button>Create</button>
     </form>

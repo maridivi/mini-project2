@@ -7,7 +7,10 @@ function RecipeCard({ image, name, id }) {
       <div className="RecipeBox">
       <h2>{name}</h2>
         {" "}
+        <div className="ImageContainer" >
         <img src={image}></img>
+        </div>
+        
         </div>
       </Link>
       

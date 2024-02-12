@@ -35,6 +35,7 @@ function App() {
           // Returns the updatedRecipe object to replace the current recipe in the new array.
           return updatedRecipe;
         }
+        
         // For any recipe that does not match the ID, returns the recipe unmodified.
         return recipe;
       })
@@ -64,6 +65,7 @@ function App() {
               <RecipeDetails
                 recipes={displayedRecipes}
                 onRecipeUpdate={updateRecipe}
+                
               />
             }
           />
