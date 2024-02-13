@@ -1,6 +1,7 @@
 import { FaGithub } from "react-icons/fa";
 import { FaLinkedin } from "react-icons/fa";
 import MaryAvatar from "../assets/images/marianna.jpeg";
+import Mel from "../assets/images/mel.jpg";
 export default function AboutPage() {
   return (
     <div className="AboutPage">
@@ -33,10 +34,14 @@ export default function AboutPage() {
         </div>
 
         <div className="TeamMember">
-          <img />
-
+          <img src={Mel} className="MemberImage"/>
           <div className="MemberData">
             <h3>Melanie Schiffner</h3>
+            <p>
+              Used to be an Office Manager / Management Assistant and now looking forward to become a web developer.
+              <br /> Favourite dish: <b>Pizza & Sushi</b>
+            </p>
+
             <div className="Links">
               <a href="https://www.linkedin.com/in/melanie-schiffner-525b8aa2/">
                 <FaLinkedin size={30} />
