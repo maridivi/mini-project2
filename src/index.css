@@ -5,7 +5,7 @@
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
-  background-color: #D9EDBF;
+  background-color: rgba(249, 247, 247, 0.935);
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -24,28 +24,46 @@ body {
   height: 100%;
 }
 
+button:hover {
+  opacity: 0.8;
+}
+a:hover {
+  opacity: 0.8;
+}
+
 .Wrapper {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
 }
-.Main {
-  flex: 1;
+
+.grid {
   display: grid;
   grid-template-columns: 200px 1fr;
+}
+.Main {
+  flex: 1;
+  width: 100%;
   align-items: stretch;
+  margin: 0 auto;
+  margin-top: -24px;
 }
 .Navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   height: 100px;
   flex: 0 0 auto;
   padding: 0 20px;
-  background-color: #FFB996;
+  background-color: #d9edbf;
+  color: rgb(13, 3, 70);
+  gap: 10px;
 }
 
 .Navbar h1 {
+  align-self: center;
   text-align: center;
-  margin-top: 30px;
-  color: black;
+  width: 100%;
 }
 
 .Sidebar {
@@ -54,7 +72,7 @@ body {
   padding: 20px;
   text-align: start;
   align-items: center;
-  background-color: #dde7d0;
+  background-color: white;
 }
 
 .Footer {
@@ -62,7 +80,7 @@ body {
   display: flex;
   justify-content: center;
   flex: 0 0 auto;
-  background-color: #FFB996;
+  background-color: #d9edbf;
 }
 
 .Footer a {
@@ -75,15 +93,20 @@ body {
   flex-direction: row;
   flex-wrap: wrap;
   font-size: small;
+  justify-content: center;
+  padding: 40px 10px;
+}
+
+.RecipeListPage {
+  display: flex;
+  flex-direction: column;
 }
 
 .RecipeBox img {
-  width:200px; 
-  /* border: 2px solid white; */
+  width: 200px;
+
   height: 180px;
   object-fit: cover;
- 
-  
 }
 
 .BoxImage {
@@ -91,19 +114,21 @@ body {
 }
 
 .RecipeBox h2 {
- color: rgb(0, 0, 0);
-  margin-left: 10px;
-  text-align: center
+  color: rgb(0, 0, 0);
+  font-size: x-large;
+  text-align: center;
 }
 
 .RecipeContent {
-  border: 2px solid white;
   margin: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
   padding: 10px;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgb(181, 180, 180);
 }
 
 .RecipeContent button {
@@ -113,10 +138,9 @@ body {
   margin-top: 10px;
 }
 
-
 form {
-  margin: 5px;
-  border: 2px solid white;
+  margin: 5px auto;
+
   padding: 10px;
 }
 
@@ -127,18 +151,22 @@ form {
 .RecipeDetail {
   color: rgb(0, 0, 0);
   margin-left: 20px;
-  
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgb(181, 180, 180);
+  text-align: center;
 }
 
 .HomeLink {
   padding: 20px 0;
   display: inline-block;
-  
 }
 
 .RecipePage {
   display: flex;
-  color:black;
+  color: black;
+  padding: 30px;
 }
 
 .UpdatingForm {
@@ -146,7 +174,12 @@ form {
   flex-direction: column;
   gap: 10px;
   color: black;
-  
+  font-size: large;
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgb(181, 180, 180);
+  margin-bottom: 40px;
 }
 
 .UpdatingForm button {
@@ -159,23 +192,37 @@ form {
   gap: 10px;
 }
 
-
 .AboutPage {
   margin-left: 20px;
   color: black;
 }
 
 .TeamMember {
-  position: relative;
   display: flex;
-  flex-direction: row;
+
   margin-bottom: 20px;
-  border: 2px solid white;
-  width: 30%;
+  border: none;
+  background-color: white;
+  width: 50%;
+  gap: 30px;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px rgb(181, 180, 180);
 }
 
-.TeamMember p {
-  margin-right: 10px;
+.TeamMember h3 {
+  margin: 0 auto;
+}
+
+.Links {
+  display: flex;
+  gap: 30px;
+}
+
+.MemberImage {
+  border-radius: 100%;
+  width: 100px;
+  height: 100px;
 }
 
 .Links {
@@ -187,9 +234,12 @@ form {
 }
 
 button {
-  background-color: #FFB996;
-  border:none;
+  background-color: #88b64c;
+  border: none;
   border-radius: 5px;
   padding: 4px 10px;
-  
+  cursor: pointer;
+  color: white;
+  font-weight: bold;
+  font-size: medium;
 }

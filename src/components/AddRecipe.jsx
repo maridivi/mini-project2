@@ -1,33 +1,39 @@
 import { useState } from "react";
 
-function AddRecipe({onAddFood}) {
+function AddRecipe({ onAddFood }) {
+  const [newRecipe, setNewRecipe] = useState({
+    title: "",
+    calories: "",
+    image: "",
+    servings: "",
+  });
 
-    const [newRecipe, setNewRecipe] = useState({title:"", calories:"", image:"", servings:""});
+  const handleValueChanges = (e) => {
+    setNewRecipe({
+      ...newRecipe,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-
-    const handleValueChanges = e => { 
-        setNewRecipe({
-          ...newRecipe,
-          [e.target.name]: e.target.value,
-        });
-    };
-
-    const handleSubmit = (event) => {
+  const handleSubmit = (event) => {
     event.preventDefault();
     onAddFood({
       id: Date.now(),
       name: newRecipe.title,
       calories: newRecipe.calories,
       image: newRecipe.image,
-      servings: newRecipe.servings
+      servings: newRecipe.servings,
     });
-    setNewRecipe({title:"", calories:"", image:"", servings:""});
+    setNewRecipe({ title: "", calories: "", image: "", servings: "" });
   };
-    
+
+  console.log(newRecipe.image);
+
   return (
     <form onSubmit={handleSubmit} className="UpdatingForm">
-       <div className="UpdateInput">
-       <label>Name: </label>
+      <h2>Add a new recipe</h2>
+      <div className="UpdateInput">
+        <label>Name: </label>
         <input
           type="text"
           name="title"
@@ -36,10 +42,10 @@ function AddRecipe({onAddFood}) {
           value={newRecipe.title}
           onChange={handleValueChanges}
         />
-         </div>
-      
+      </div>
+
       <div className="UpdateInput">
-      <label>Calories: </label>
+        <label>Calories: </label>
         <input
           type="text"
           name="calories"
@@ -48,10 +54,10 @@ function AddRecipe({onAddFood}) {
           value={newRecipe.calories}
           onChange={handleValueChanges}
         />
-         </div>
-      
+      </div>
+
       <div className="UpdateInput">
-      <label>Image: </label>
+        <label>Image: </label>
         <input
           type="url"
           name="image"
@@ -60,10 +66,10 @@ function AddRecipe({onAddFood}) {
           value={newRecipe.image}
           onChange={handleValueChanges}
         />
-         </div>
-      
+      </div>
+
       <div className="UpdateInput">
-      <label>Servings:  </label>
+        <label>Servings: </label>
         <input
           type="text"
           name="servings"
@@ -72,13 +78,11 @@ function AddRecipe({onAddFood}) {
           value={newRecipe.servings}
           onChange={handleValueChanges}
         />
-         </div>
-     
+      </div>
 
       <button>Create</button>
     </form>
   );
 }
-
 
 export default AddRecipe;

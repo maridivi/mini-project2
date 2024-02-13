@@ -14,6 +14,16 @@ import RecipesList from "./components/RecipesList";
 
 function App() {
   const [displayedRecipes, setDisplayedRecipes] = useState(recipes);
+  const [isFormVisible, setIsFormVisible] = useState(false);
+  const [isSideBarVisible, setIsSideBarVisible] = useState(false);
+
+  function toggleFormVisibility() {
+    setIsFormVisible(!isFormVisible);
+  }
+
+  function toggleSidebarVisibility() {
+    setIsSideBarVisible(!isSideBarVisible);
+  }
 
   function handleAddFood(newFood) {
     setDisplayedRecipes([...displayedRecipes, newFood]);
@@ -35,17 +45,18 @@ function App() {
           // Returns the updatedRecipe object to replace the current recipe in the new array.
           return updatedRecipe;
         }
-        
+
         // For any recipe that does not match the ID, returns the recipe unmodified.
         return recipe;
       })
     );
+    toggleFormVisibility();
   };
   return (
     <div className="Wrapper">
-      <NavBar />
-      <div className="Main">
-        <SideBar />
+      <NavBar toggleSidebarVisibility={toggleSidebarVisibility} />s
+      <div className={isSideBarVisible ? "Main grid" : "Main"}>
+        {isSideBarVisible && <SideBar />}
 
         <Routes>
           <Route
@@ -65,14 +76,14 @@ function App() {
               <RecipeDetails
                 recipes={displayedRecipes}
                 onRecipeUpdate={updateRecipe}
-                
+                toggleFormVisibility={toggleFormVisibility}
+                isFormVisible={isFormVisible}
               />
             }
           />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
-
       <Footer />
     </div>
   );
